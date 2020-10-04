@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Lesson from '@/components/Lesson'
+import SignIn from '@/components/SignIn'
 
 Vue.use(VueRouter)
 
@@ -24,6 +25,14 @@ const routes = [
     name: "lessons",
     component: Lesson,
     props: true
+  },
+  {
+    path: '/SignIn',
+      name: 'SignIn',
+      component: SignIn,
+      meta: {
+        guest: true
+      }
   }
 ]
 
