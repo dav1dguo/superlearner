@@ -11,6 +11,8 @@
 <script>
 import yaml from "js-yaml";
 import Section from "@/components/Section.vue";
+import firebase from "firebase";
+import axios from "axios";
 
 export default {
   components: {
@@ -20,38 +22,6 @@ export default {
   data() {
     return {
       lesson: null,
-      yaml: `
-sections:    
-- videoUrl: https://www.youtube.com/embed/lOzfz9VnUTY
-  description: |
-    Applies the dark theme variant to the component. This will default the
-      components color to
-     
-    Another pragraph.
-    
-    A list:
-    
-    - item1
-    - item2
-      - item21
-      - item22
-    -item3
-    
-    Final paragrah.
-    
-  qas:
-  - question: Applies the dark theme variant to the component. This will default the
-      components color to
-    candidates:
-    - answer1
-    - answer2
-    answer: 1
-  - question: question text2
-    candidates:
-    - answer21
-    - answer22
-    answer: 0
-    `,
     };
   },
   created() {
@@ -59,11 +29,24 @@ sections:
   },
   methods: {
     loadYaml(id) {
-      console.log(id);
-      let obj = yaml.load(this.yaml);
-      this.addQaSelected(obj);
-      this.lesson = obj;
+      let self = this;
+      let storageRef = firebase.storage().ref(id);
+      storageRef.getDownloadURL().then(function (url) {
+        axios
+          .get(url)
+          .then((res) => {
+            console.log(res.data);
+            let obj = yaml.load(res.data);
+            self.addQaSelected(obj);
+            self.lesson = obj;
+            console.log(self.lesson);
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      });
     },
+
     addQaSelected(lesson) {
       for (let section of lesson.sections) {
         for (let qa of section.qas) {
