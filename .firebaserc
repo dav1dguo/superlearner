@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "david-eric-919f0"
+  },
+  "targets": {
+    "david-eric-919f0": {
+      "hosting": {
+        "superlearner": [
+          "superlearner"
+        ]
+      }
+    }
+  }
+}
