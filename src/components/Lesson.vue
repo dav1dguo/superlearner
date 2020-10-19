@@ -21,7 +21,7 @@ export default {
   props: ["id"],
   data() {
     return {
-      lesson: null,
+      lesson: { sections: [] },
     };
   },
   created() {
@@ -35,11 +35,11 @@ export default {
         axios
           .get(url)
           .then((res) => {
-            console.log(res.data);
+            // console.log(res.data);
             let obj = yaml.load(res.data);
             self.addQaSelected(obj);
             self.lesson = obj;
-            console.log(self.lesson);
+            // console.log(self.lesson);
           })
           .catch((error) => {
             console.error(error);
