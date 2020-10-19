@@ -3,7 +3,9 @@ import App from './App.vue'
 import vuetify from './plugins/vuetify';
 import firebase from 'firebase'
 import router from './router'
+import VueYoutube from 'vue-youtube'
 
+Vue.use(VueYoutube)
 Vue.config.productionTip = false
 
 

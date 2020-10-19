@@ -41,6 +41,21 @@
             </v-list-item-icon>
             <v-list-item-title>About</v-list-item-title>
           </v-list-item>
+
+          <v-list-item to="/host">
+            <v-list-item-icon>
+              <v-icon>mdi-host</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Host</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item to="/participant">
+            <v-list-item-icon>
+              <v-icon>mdi-participant</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Participant</v-list-item-title>
+          </v-list-item>
+
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>

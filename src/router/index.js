@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Lesson from '@/components/Lesson'
 import SignIn from '@/components/SignIn'
+import Host from '@/components/Host'
+import Participant from '@/components/Participant'
 
 Vue.use(VueRouter)
 
@@ -18,6 +20,17 @@ const routes = [
     component: () => import('../views/About.vue')
   },
   {
+    path: '/host',
+    name: 'Host',
+    component: Host
+  },
+  {
+    path: '/participant/:roomId',
+    name: 'Participant',
+    component: Participant,
+    props: true,
+  },
+  {
     path: "/lessons/:id",
     name: "lessons",
     component: Lesson,
@@ -25,12 +38,12 @@ const routes = [
   },
   {
     path: '/SignIn',
-      name: 'SignIn',
-      component: SignIn,
-      meta: {
-        guest: true
-      }
-  }
+    name: 'SignIn',
+    component: SignIn,
+    meta: {
+      guest: true
+    }
+  },
 ]
 
 const router = new VueRouter({
