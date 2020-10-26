@@ -1,7 +1,11 @@
 <template>
   <div>
-    <youtube :video-id="videoId" ref="youtube" />
-
+       <youtube
+      :video-id="videoId"
+      ref="youtube"
+      :playerVars="playerVars"
+      @ready="onReady"
+    />
   </div>
 </template>
 
@@ -15,6 +19,7 @@ export default {
       videoId: "",
       play: true,
       requestedStartSec: 0,
+      playerVars: { autoplay: 1, mute: 1},
     };
   },
   created() {
@@ -41,12 +46,22 @@ export default {
       }
     },
     requestedStartSec() {
-      console.log("requestedStartSec: ", this.requestedStartSec);
-      console.log("player: ", this.$refs.youtube.player);
       this.$refs.youtube.player.seekTo(this.requestedStartSec, true);
     },
   },
-  methods: {},
+  methods: {
+    onReady() {
+      setTimeout(this.syncState, 3000);
+    },
+    syncState(){
+      this.$refs.youtube.player.seekTo(this.requestedStartSec, true);
+      if(this.play) {
+        this.$refs.youtube.player.playVideo();
+      }else{
+        this.$refs.youtube.player.pauseVideo();
+      }
+    }
+  },
   computed: {},
 };
 </script>

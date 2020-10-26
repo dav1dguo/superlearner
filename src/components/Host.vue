@@ -3,19 +3,30 @@
     <youtube
       :video-id="videoId"
       ref="youtube"
-      :player-vars="playerVars"
+      :playerVars="playerVars"
       @playing="onPlaying"
       @paused="onPaused"
       @ready="onReady"
     />
     <v-text-field
-      v-model="videoId"
+      v-model="youtubeUrl"
       dense
-      label="Video ID, e.g., eyCHJjEwVEk"
+      label="YouTube url, e.g., https://www.youtube.com/watch?v=Z2vzrQWny_c"
     ></v-text-field>
     <v-switch v-model="controlOthers" label="Control Guests" />
-    Guests can use the following URL to join your video:
-    http://superlearner.web.app/participant/{{ user.email }}
+    Send your guests the following URL for them to join your video:
+    <v-btn color="primary" v-clipboard="copyParticipantUrl">
+      Copy to clipboard
+    </v-btn>
+    <v-text-field :value="participantUrl" readonly></v-text-field>
+    <!-- <v-snackbar v-model="snackbar" : timeout="timeout">
+      {{ participantUrl }} was copied to clipboard.
+      <template v-slot:action="{ attrs }">
+        <v-btn color="blue" text v-bind="attrs" @click="snackbar = false">
+          Close
+        </v-btn>
+      </template>
+    </v-snackbar> -->
   </div>
 </template>
 
@@ -26,14 +37,25 @@ export default {
   components: {},
   data() {
     return {
-      videoId: "Z2vzrQWny_c",
-      playerVars: { showinfo: 0, ecver: 2 },
+      youtubeUrl: "https://www.youtube.com/watch?v=Z2vzrQWny_c",
+      playerVars: { autoplay: 0, mute: 1 },
       play: true,
-      controlOthers: false,
+      controlOthers: true,
       user: { email: "" },
       lastSyncedPlayerTime: 0,
       intervalHandle: null,
+      snackbar: null,
+      timeout: 4000,
     };
+  },
+  computed: {
+    videoId() {
+      let videoId = this.$youtube.getIdFromUrl(this.youtubeUrl);
+      return videoId;
+    },
+    participantUrl() {
+      return "https://superlearner.web.app/participant/" + this.user.email;
+    },
   },
   created() {
     firebase.auth().onAuthStateChanged((user) => {
@@ -54,9 +76,7 @@ export default {
       this.notifyServer();
       this.intervalHandle = setInterval(this.timeChange, 1000);
     },
-    onReady() {
-      console.log("ready");
-    },
+    onReady() {},
     timeChange() {
       // console.log("timeChange")
       if (!this.controlOthers) {
@@ -95,7 +115,10 @@ export default {
         self.lastSyncedPlayerTime = sec;
       });
     },
+    copyParticipantUrl() {
+      this.snackbar = true;
+      return this.participantUrl;
+    },
   },
-  computed: {},
 };
 </script> 

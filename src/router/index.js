@@ -5,6 +5,8 @@ import Lesson from '@/components/Lesson'
 import SignIn from '@/components/SignIn'
 import Host from '@/components/Host'
 import Participant from '@/components/Participant'
+import UnknownParticipant from '@/components/UnknownParticipant'
+import firebase from "firebase";
 
 Vue.use(VueRouter)
 
@@ -22,7 +24,15 @@ const routes = [
   {
     path: '/host',
     name: 'Host',
-    component: Host
+    component: Host,
+    meta: {
+      auth:true
+    }
+  },
+  {
+    path: '/participant',
+    name: 'UnknownParticipant',
+    component: UnknownParticipant,
   },
   {
     path: '/participant/:roomId',
@@ -50,6 +60,22 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.auth)) {
+    firebase.auth().onAuthStateChanged(user => {
+      if (!user) {
+        next({
+          path: "/SignIn",
+        })
+      } else {
+        next()
+      }
+    })
+  } else {
+    next()
+  }
 })
 
 export default router

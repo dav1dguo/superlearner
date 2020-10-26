@@ -4,8 +4,10 @@ import vuetify from './plugins/vuetify';
 import firebase from 'firebase'
 import router from './router'
 import VueYoutube from 'vue-youtube'
+import Clipboard from 'v-clipboard'
 
 Vue.use(VueYoutube)
+Vue.use(Clipboard)
 Vue.config.productionTip = false
 
 
