@@ -22,6 +22,11 @@ const routes = [
     component: () => import('../views/About.vue')
   },
   {
+    path: '/activities',
+    name: 'Activities',
+    component: () => import('../components/Activities.vue')
+  },
+  {
     path: '/host',
     name: 'Host',
     component: Host,
