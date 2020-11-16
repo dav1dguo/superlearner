@@ -25,17 +25,23 @@ export default {
   data: () => ({
     email: "",
     emails: [],
-    selectedItem: 1,
+    user: { email: "" },
   }),
   created() {
     let self = this;
-    let fs = firebase.firestore();
-    fs.collection("emails").onSnapshot(function (querySnapshot) {
-      self.emails = [];
-      querySnapshot.forEach(function (doc) {
-        // console.log(doc);
-        self.emails.push({ email: doc.data().email, id: doc.id });
-      });
+    firebase.auth().onAuthStateChanged((user) => {
+      this.user = user;
+      let fs = firebase.firestore();
+      fs.collection("teachers")
+        .doc(this.user.email)
+        .collection("students")
+        .onSnapshot(function (querySnapshot) {
+          self.emails = [];
+          querySnapshot.forEach(function (doc) {
+            // console.log(doc);
+            self.emails.push({ email: doc.data().email, id: doc.id });
+          });
+        });
     });
   },
   methods: {
@@ -43,7 +49,9 @@ export default {
       console.log(item.id);
       firebase
         .firestore()
-        .collection("emails")
+        .collection("teachers")
+        .doc(this.user.email)
+        .collection("students")
         .doc(item.id)
         .delete()
         .then(function () {
@@ -51,7 +59,12 @@ export default {
         });
     },
     onAddEmail() {
-      firebase.firestore().collection("emails").add({ email: this.email });
+      firebase
+        .firestore()
+        .collection("teachers")
+        .doc(this.user.email)
+        .collection("students")
+        .add({ email: this.email });
     },
   },
 };
