@@ -27,6 +27,16 @@ const routes = [
     component: () => import('../components/Activities.vue')
   },
   {
+    path: '/myVids',
+    name: 'MyVideos',
+    component: () => import('../components/MyVideos.vue')
+  },
+  {
+    path: '/myStudents',
+    name: 'MyStudents',
+    component: () => import('../components/MyStudents.vue')
+  },
+  {
     path: '/host',
     name: 'Host',
     component: Host,

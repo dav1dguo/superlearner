@@ -22,3 +22,11 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+1. cd super_learner
+2. npm run serve
+
+
+Check in:  Give name and checkmark -> sync
+npm run build
+firebase deploy --only hosting:superlearner

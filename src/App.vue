@@ -42,11 +42,25 @@
             <v-list-item-title>About</v-list-item-title>
           </v-list-item>
 
-       <v-list-item to="/activities">
+          <v-list-item to="/activities">
             <v-list-item-icon>
               <v-icon>mdi-account</v-icon>
             </v-list-item-icon>
             <v-list-item-title>Activities</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item to="/myVids">
+            <v-list-item-icon>
+              <v-icon>mdi-account</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>My Videos</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item to="/myStudents">
+            <v-list-item-icon>
+              <v-icon>mdi-account</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>My Students</v-list-item-title>
           </v-list-item>
 
           <v-list-item to="/host">
@@ -62,7 +76,6 @@
             </v-list-item-icon>
             <v-list-item-title>Participant</v-list-item-title>
           </v-list-item>
-
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
