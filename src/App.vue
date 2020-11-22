@@ -63,6 +63,13 @@
             <v-list-item-title>My Students</v-list-item-title>
           </v-list-item>
 
+           <v-list-item to="/watchTVids">
+            <v-list-item-icon>
+              <v-icon>mdi-account</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Watch a Teacher's Videos</v-list-item-title>
+          </v-list-item>
+
           <v-list-item to="/host">
             <v-list-item-icon>
               <v-icon>mdi-host</v-icon>

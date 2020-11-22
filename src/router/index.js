@@ -37,6 +37,11 @@ const routes = [
     component: () => import('../components/MyStudents.vue')
   },
   {
+    path: '/watchTVids',
+    name: 'WatchTVids',
+    component: () => import('../components/WatchTVids.vue')
+  },
+  {
     path: '/host',
     name: 'Host',
     component: Host,
