@@ -7,6 +7,7 @@ import Host from '@/components/Host'
 import Participant from '@/components/Participant'
 import UnknownParticipant from '@/components/UnknownParticipant'
 import firebase from "firebase";
+import StudentVideos from '@/components/StudentVideos'
 
 Vue.use(VueRouter)
 
@@ -41,7 +42,7 @@ const routes = [
     name: 'Host',
     component: Host,
     meta: {
-      auth:true
+      auth: true
     }
   },
   {
@@ -53,6 +54,12 @@ const routes = [
     path: '/participant/:roomId',
     name: 'Participant',
     component: Participant,
+    props: true,
+  },
+  {
+    path: '/studentVideos/:teacherId',
+    name: 'StudentVideos',
+    component: StudentVideos,
     props: true,
   },
   {
