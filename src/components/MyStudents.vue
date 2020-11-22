@@ -64,7 +64,8 @@ export default {
         .collection("teachers")
         .doc(this.user.email)
         .collection("students")
-        .add({ email: this.email });
+        .doc(this.email)
+        .set({ email: this.email });
     },
   },
 };

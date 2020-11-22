@@ -28,6 +28,7 @@ export default {
     return {
       user: { email: "" },
       videos: [],
+      videoURL: "",
       links: [
         "https://www.youtube.com/embed/oYk0iU2r9VQ",
         "https://www.youtube.com/embed/wWnsVUNOVcY",
