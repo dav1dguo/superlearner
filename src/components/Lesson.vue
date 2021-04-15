@@ -5,7 +5,7 @@
       :key="index"
       :section="section"
     />
-  </div>
+    </div>
 </template>
 
 <script>

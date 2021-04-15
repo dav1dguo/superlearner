@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h2> Some lessons are still being developed, and more will come out in the future! Please be patient and remember to check for new lessons! </h2>
     <v-row dense>
       <v-col v-for="(lesson, index) in lessons" :key="index">
         <v-card class="mx-auto" max-width="400">
