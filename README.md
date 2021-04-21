@@ -28,5 +28,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
 Check in:  Give name and checkmark -> sync
+
+To deploy:
 npm run build
 firebase deploy --only hosting:superlearner

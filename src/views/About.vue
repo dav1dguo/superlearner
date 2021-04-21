@@ -79,15 +79,16 @@
       </p>
       <h2>¿Qué es el autismo?</h2>
       <p class="font-weight-regular">
-        El autismo es una trastorna de espectro y está asociado con condiciones
+        El autismo es un trastorno del espectro y está asociado con condiciones
         muy diversas. Los individuos que tienen autismo tienen que superar
         obstáculos todos los días y tienen sus propias necesidades especiales.
-        Algunos individuos pueden vivir independientemente, y otros necesitan
-        depender de la ayuda de otros, dependiendo de donde se encuentre en el
+        Algunos individuos pueden vivir independientemente, mientras que otros
+        requieren de la ayuda de otros, dependiendo de dónde se encuentre en el
         espectro. El autismo es un gran paraguas que contiene muchas condiciones
-        médicas diferentes, como síndrome de Asperger, trastorno autista, etc.
+        médicas diferentes, tales como el síndrome de Asperger, trastorno
+        autista, etc.
       </p>
-      <h2>Características comunes del ASD</h2>
+      <h2>Las características comunes del ASD</h2>
       <p class="font-weight-regular">
         Debido a las condiciones diversas que se clasifican como ASD, los
         individuos que tienen autismo pueden tener sus propias características y
@@ -110,24 +111,26 @@
         Los investigadores y científicos no han descubierto la causa del
         autismo, pero estudios muestran que el autismo está estrechamente
         relacionado con genes hereditarios, afecciones médicas, y factores
-        ambientales. Por ejemplo, las mutaciones genéticas, los anomalías
-        cromosómicas, y la edad de los padres todos pueden afectar y causar ASD.
-        ASD es en razas y etnias en todo el mundo, por lo tanto muestra que la
-        raza y la etnia no son factores importantes.
+        ambientales. Por ejemplo, las mutaciones genéticas, las anomalías
+        cromosómicas y la edad de los padres; todos estos pueden afectar y
+        causar ASD. Este último, ASD, está localizado en todas las razas y
+        etnias. Por lo tanto, muestra que la raza y la etnia no son factores
+        importantes.
       </p>
-      <h2>Autismo en todas nuestra vidas</h2>
+      <h2>El autismo en todas nuestra vidas</h2>
       <p class="font-weight-regular">
-        Un estudio de 2016 realizado por el CDC mostró que aproximadamente 1 de
+        Un estudio de 2016 realizado por la CDC mostró que aproximadamente 1 de
         cada 54 niños eran autistas en los Estados Unidos. En contraste con otro
-        estudio similar de 2014, hay un aumento del diez por ciento. Con la
-        mejora de la tecnología, más y más niños pueden ser diagnosticados con
-        autismo. Cuanto antes se diagnostiquen, el mejor tratamiento y terapia
-        podrán recibir. Es importante recomendar siempre a sus seres queridos
-        que visiten un profesional si creen que su niños tienen autismo.
+        estudio similar llevado a cabo en el 2014, hay un aumento del diez por
+        ciento. Con la mejora de la tecnología, más y más niños pueden ser
+        diagnosticados con autismo. Cuanto antes se diagnostiquen, mejor
+        tratamiento y terapia podrán recibir. Es importante recomendar siempre a
+        sus seres queridos que visiten un profesional si creen que su niños
+        tienen autismo.
       </p>
       <p class="font-weight-regular">
         A pesar de nuestras diferencias, los individuos con autismo quieren ser
-        amados y ser felices, al igual que nosotros.
+        amados y ser felices, de la misma manera que nosotros.
       </p>
     </div>
   </div>
